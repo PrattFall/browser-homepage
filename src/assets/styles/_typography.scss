@@ -1,0 +1,15 @@
+@import 'lib/base-typography';
+
+h1,
+h2,
+h3,
+h4 {
+	color: $main-color;
+	font-weight: 300;
+
+	small {
+		color: dynamic-lightness($bg-color, $main-color, 15%);
+		//display: block;
+	}
+}
+

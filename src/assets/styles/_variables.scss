@@ -1,0 +1,20 @@
+// Colors
+//$bg-color: #232929;
+//$bg-color: #f7f7f7;
+$bg-color: #1d2333;
+//$main-color: #7ab1a2;
+$main-color: #6f5c9d;
+
+// Typography
+$sans-font: 'Open Sans';
+$serif-font: Georgia;
+$header-font: $sans-font;
+$mono-font: Consolas, Inconsolata, Terminus, 'DejaVu Sans Mono', monospace, 'Literally Anything', 'Comic Sans MS', 'Courier New', Courier;
+$font-ratio: 1.414;
+$base-font-size: 16px;
+
+// Breakpoints
+$phone: new-breakpoint(max-width 767px);
+$not-phone: new-breakpoint(min-width 767px);
+$small-comp: new-breakpoint(max-width 1024px);
+$large-comp: new-breakpoint(min-width 1025px);

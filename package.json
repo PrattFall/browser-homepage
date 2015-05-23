@@ -1,0 +1,22 @@
+{
+	"name": "bp-front-page",
+	"version": "0.5.0",
+	"description": "Browser Homepage",
+	"author": "Brian Pratt <brianpratt@fastmail.fm>",
+	"private": true,
+	"dependencies": {
+		"gulp": "gulpjs/gulp#4.0",
+		"gulp-concat": "*",
+		"gulp-uglify": "*",
+		"gulp-sass": "*",
+		"gulp-autoprefixer": "*",
+		"gulp-minify-css": "*",
+		"gulp-connect": "*",
+		"del": "*",
+		"gulp-rename": "*"
+	},
+	"devDependencies": {
+		"gulp": "git://github.com/gulpjs/gulp.git#4.0",
+		"gulp-cli": "git://github.com/gulpjs/gulp-cli.git#4.0"
+	}
+}
