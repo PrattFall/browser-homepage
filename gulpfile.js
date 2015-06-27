@@ -1,6 +1,3 @@
-// This is a mix of my own old gulp file and this one here:
-// https://github.com/rioki/www.rioki.org/blob/master/gulpfile.js
-
 var gulp = require('gulp');
 
 // Javascript

@@ -25,7 +25,7 @@ h1 {
 	//display: none;
 }
 
-#wrapper { height: 100%; }
+.wrapper { height: 100%; }
 
 .content {
 	@extend %center-block;
@@ -35,7 +35,7 @@ h1 {
 	padding: 0 2em;
 }
 
-#main-header {
+.main-header {
 	@include media($phone) { display: none; }
 
 	font-size: 3em;
@@ -43,10 +43,9 @@ h1 {
 	text-align: center;
 }
 
-#category-list {
+.categories {
 	@include outer-container();
 	background-color: lighten($bg-color, 2.5%);
-	//border: 1px solid dynamic-color($bg-color, #ccc, #777);
 	padding: 1rem;
 }
 
