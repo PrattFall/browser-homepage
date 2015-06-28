@@ -1,5 +1,8 @@
 var gulp = require('gulp');
 
+// Templates
+var swig = require('gulp-swig');
+
 // Javascript
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
@@ -15,10 +18,15 @@ var connect = require('gulp-connect');
 // Utility
 var del = require('del');
 var rename = require('gulp-rename');
+var data = require('gulp-data');
 
 var paths = {
 	scripts: 'src/assets/js/**/*',
 	styles: 'src/assets/styles/**/*',
+};
+
+var swigOpts = {
+	defaults: { cache: false }
 };
 
 gulp.task('build', gulp.series(
@@ -35,6 +43,8 @@ function clean(done) {
 
 function page() {
 	return gulp.src('src/*.html')
+		.pipe(data(require('./settings.json')))
+		.pipe(swig(swigOpts))
 		.pipe(gulp.dest('build'));
 }
 
@@ -58,7 +68,7 @@ function styles() {
 function watch() {
 	gulp.watch(paths.scripts, scripts);
 	gulp.watch(paths.styles, styles);
-	gulp.watch('src/*.html', page);
+	gulp.watch(['src/*.html', 'settings.json'], page);
 
 	connect.server({
 		root: 'build',

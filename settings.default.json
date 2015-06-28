@@ -1,0 +1,19 @@
+{
+	"title" : "お帰りなさい!",
+
+	"categories" : [
+		{
+			"name" : "Category Name",
+			"sites" : [
+				{
+					"url" : "http://google.com",
+					"name" : "Google"
+				},
+				{
+					"url" : "http://example.com",
+					"name" : "Example"
+				}
+			]
+		}
+	]
+}

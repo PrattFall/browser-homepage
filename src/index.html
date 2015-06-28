@@ -9,56 +9,18 @@
 	<body>
 		<div class='wrapper'>
 			<div class='content'>
-				<h1 class='main-header'>お帰りなさい!</h1>
+				<h1 class='main-header'>{{ title }}</h1>
 				<div class='categories'>
+					{% for category in categories %}
 					<div class="category">
-						<h2>Time Sinks</h2>
+						<h2>{{ category.name }}</h2>
 						<ul class="category-list">
-							<li><a href="http://boards.4chan.org/g">g</a></li>
-							<li><a href="http://boards.4chan.org/v">v</a></li>
+							{% for site in category.sites %}
+							<li><a href="{{ site.url }}">{{ site.name }}</a></li>
+							{% endfor %}
 						</ul>
 					</div>
-					<div class="category">
-						<h2>Social</h2>
-						<ul class="category-list">
-							<li><a href="https://twitter.com">Twitter</a></li>
-							<li><a href="http://www.linkedin.com">LinkedIn</a></li>
-						</ul>
-					</div>
-					<div class="category">
-						<h2>Anime</h2>
-						<ul class="category-list">
-							<li><a href="http://myanimelist.net">MAL</a></li>
-							<li><a href="https://boards.4chan.org/a">a</a></li>
-						</ul>
-					</div>
-					<div class="category">
-						<h2>Customization</h2>
-						<ul class="category-list">
-							<li><a href="http://wallhaven.cc">Wallhaven</a></li>
-							<li><a href="https://boards.4chan.org/w">w</a></li>
-							<li><a href="https://boards.4chan.org/wg">wg</a></li>
-						</ul>
-					</div>
-					<div class="category">
-						<h2>Development</h2>
-						<ul class="category-list">
-							<li><a href="http://www.github.com">Github</a></li>
-							<li><a href="http://www.bitbucket.org">Bitbucket</a></li>
-							<li><a href="http://www.codepen.io">Codepen</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="content">
-				<div class='categories'>
-					<div class="category">
-						<h2>MyAnimeList <small>Watching</small></h2>
-						<table style="width: 100%;">
-							<thead></thead>
-							<tbody id="MAL"></tbody>
-						</table>
-					</div>
+					{% endfor %}
 				</div>
 			</div>
 		</div>
