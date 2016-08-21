@@ -10,7 +10,7 @@ var uglify = require('gulp-uglify');
 //SASS
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var minifycss = require('gulp-minify-css');
+var cleanCSS = require('gulp-clean-css');
 
 // Server
 var connect = require('gulp-connect');
@@ -33,12 +33,13 @@ gulp.task('build', gulp.series(
 	clean,
 	gulp.parallel(scripts, styles, page)
 ));
+
 gulp.task(watch);
 
 gulp.task('default', gulp.series('build'));
 
 function clean(done) {
-	del(['build'], done);
+	return del(['build'], done);
 }
 
 function page() {
@@ -61,7 +62,7 @@ function styles() {
 		.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
 		.pipe(gulp.dest('build/assets/css'))
 		.pipe(rename({suffix: '.min'}))
-		.pipe(minifycss())
+		.pipe(cleanCSS())
 		.pipe(gulp.dest('build/assets/css'));
 }
 
